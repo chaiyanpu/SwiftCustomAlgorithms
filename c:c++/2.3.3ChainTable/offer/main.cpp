@@ -16,7 +16,7 @@ struct ListNode {
 };
 
 ///创建十个节点的链表
-ListNode* creatList(){
+ListNode* creatChainTable(){
     ListNode *listNode = new ListNode();
     //    listNode->nodeValue = 0;
     ListNode *node = new ListNode();
@@ -54,9 +54,32 @@ void addListNodeToTail(ListNode *pHead,int value){
 ///找到含有某值的节点并删除
 bool removeNode(ListNode *listNode,int value){
     bool isHad = false;
-    if (listNode -> nextNode == NULL){
-        
+    ListNode *neeToDelete  = NULL;
+    if (listNode == NULL){
+        return false;
     }
+    if (listNode->nodeValue == value){
+        isHad = true;
+        neeToDelete = listNode;
+        listNode = listNode -> nextNode;
+        printf("%d\n",listNode->nodeValue);
+        
+    }else{
+        while (listNode->nextNode != NULL && listNode->nextNode->nodeValue != value){
+            listNode = listNode->nextNode;
+        }
+        if (listNode->nextNode != NULL && listNode->nextNode->nodeValue == value){
+            isHad = true;
+            neeToDelete = listNode ->nextNode;
+            listNode -> nextNode = listNode -> nextNode -> nextNode;
+        }
+    }
+    
+    if (neeToDelete){
+        delete neeToDelete;
+        neeToDelete = NULL;
+    }
+    
     return isHad;
 }
 
@@ -65,7 +88,6 @@ bool removeNode(ListNode *listNode,int value){
 void PrintListReversingly(ListNode * pHead){
     
     std::stack<ListNode*> nodes;   //需要导入<stack>头文件
-    
     ListNode *pNode = pHead;
     while (pNode != NULL) {
         nodes.push(pNode);
@@ -95,13 +117,17 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
     
-    ListNode * listNode = creatList();
+    ListNode * listNode = creatChainTable();  //创建链表
     
-    addListNodeToTail(listNode,10);
+    addListNodeToTail(listNode,10);    //尾部添加节点
     
-    PrintListReversingly(listNode);
+    bool isDelete = removeNode(listNode,5);   //删除某value的节点
+    printf("%d,1 is deleted\n",isDelete);
     
-    PrintListReversinglyRecurrence(listNode);
+    PrintListReversingly(listNode);      //反向打印节点
+    
+    PrintListReversinglyRecurrence(listNode);   //反向打印节点  递归
+    
     return 0;
 }
 
