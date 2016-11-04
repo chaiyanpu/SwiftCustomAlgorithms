@@ -101,7 +101,8 @@ addListNodeToTail(listNode,value: 10);    //尾部添加节点
 
 var isDelete = removeNode(listNode,value: 5);   //删除某value的节点
 print("\(isDelete),true is deleted\n");
-
+//true,true is deleted
 PrintListReversingly(listNode);      //反向打印节点
-
+//10 9 8 7 6 4 3 2 1 0
 PrintListReversinglyRecurrence(listNode);   //反向打印节点  递归
+//10 9 8 7 6 4 3 2 1 0
