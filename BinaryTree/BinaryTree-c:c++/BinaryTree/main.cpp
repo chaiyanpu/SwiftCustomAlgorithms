@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <exception>
+#include <stack>
 //using namespace std;
 
 ///二叉树的结构
@@ -73,13 +74,34 @@ BinaryTreenode * buildBinaryTreenodeFunc(
                                               startInorder + length - 1);
     }
     if (length < endInorder - startInorder){
+        //构建右子树
         root->pRight = buildBinaryTreenodeFunc(startPreorder + length + 1,
                                                endPreorder,
-                                               startInorder + length,
-                                               endInorder);
+                                               startInorder + length + 1,
+                                               endInorder);//这个的范围应该是一样的
     }
     
     return root;
+}
+
+//MARK:前序遍历二叉树
+///前序遍历二叉树
+void preorderBinaryTree(BinaryTreenode * tree){
+    
+    BinaryTreenode * node = tree;
+    std::stack<BinaryTreenode *> aStack;
+
+    while (aStack.size() > 0 || node != NULL) {
+        if (node != NULL){
+            printf("%d",node->value);
+            aStack.push(node);
+            node = node->pLeft;
+        }else{
+            node = (aStack.top())->pRight;
+            aStack.pop();
+        }
+    }
+
 }
 
 
@@ -91,10 +113,14 @@ int main(int argc, const char * argv[]) {
     int inorder[8] = {4,7,2,1,5,3,8,6};
     BinaryTreenode * binaryTreenode = buildBinaryTreenode(preorder, inorder, length);
     
-    
     printf("%d------",binaryTreenode->pLeft->value);
     printf("%d------",binaryTreenode->pLeft->pLeft->value);
     printf("%d------",binaryTreenode->pLeft->pLeft->pRight->value);
+    
+    
+    //前序遍历二叉树
+    preorderBinaryTree(binaryTreenode);
+    
     
     return 0;
 }
