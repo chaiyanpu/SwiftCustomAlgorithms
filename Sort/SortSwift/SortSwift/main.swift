@@ -12,11 +12,17 @@ print("Hello, World!")
 var arr:[Int] = [3,4,2,5,9,7,6,0,1,8]
 
 //冒泡排序
+print("冒泡排序")
 sortWithPop(&arr)
+print(arr)
 print("--------")
 
 //快速排序
+print("快速排序")
 quickSort(&arr, left: 0, right: 9)
-for i in 0 ..< arr.count{
-    print(arr[i])
-}
+print(arr)
+print("--------")
+
+//归并排序
+print("归并排序")
+print(mergeSort(array: arr))print("--------")
