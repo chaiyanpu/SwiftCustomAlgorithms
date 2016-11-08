@@ -25,4 +25,5 @@ print("--------")
 
 //归并排序
 print("归并排序")
-print(mergeSort(array: arr))print("--------")
+print(mergeSort(array: arr))
+print("--------")
