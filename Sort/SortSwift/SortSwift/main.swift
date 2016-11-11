@@ -23,7 +23,7 @@ quickSort(&arr, left: 0, right: 9)
 print(arr)
 print("--------")
 
-//归并排序
+//归并排序 稳定的排序方式
 print("归并排序")
 print(mergeSort(array: arr))
 print("--------")

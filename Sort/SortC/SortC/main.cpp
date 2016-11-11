@@ -63,16 +63,47 @@ void quickSort(int *arr,int low,int high){
 }
 
 ///堆排序
+//TODO:
 
 
 
 
-
-
+void mergeS(int targetArray[],int tmpArray[],int startIndex,int midIndex,int endIndex){
+    int i = startIndex,j = midIndex,k = startIndex;
+    
+    while (i != midIndex + 1 && j != endIndex + 1) {
+        if (targetArray[i] > targetArray[j]){
+            tmpArray[k++] = targetArray[j++];
+            
+        }else{
+            tmpArray[k++] = targetArray[j++];
+            
+        }
+        while ( i != midIndex) {
+            tmpArray[k++] = targetArray[i++];
+            
+        }
+        
+        while (j != endIndex + 1) {
+            tmpArray[k++] = targetArray[j++];
+        }
+        for (i = startIndex; i <= endIndex; i ++){
+            targetArray[i] = tmpArray[i];
+        }
+        
+    }
+    
+}
 ///归并排序   稳定的排序方式
-
-
-
+void mergeSort(int targetArray[],int tmpArray[],int startindex,int endIndex){
+    int midIndex;
+    if (startindex < endIndex){
+        midIndex = (startindex + endIndex)/2;
+        mergeSort(targetArray, tmpArray, startindex, midIndex);
+        mergeSort(targetArray, tmpArray, midIndex + 1, endIndex);
+        mergeS(targetArray, tmpArray, startindex, midIndex, endIndex);
+    }
+}
 
 
 
@@ -88,5 +119,10 @@ int main(int argc, const char * argv[]) {
         printf("%d",arr[i]);
     }
     printf("\n");
+    int tmpArray[8];
+    mergeSort(arr, tmpArray, 0, 9);
+    for (int i = 0;i < 10 ; i++){
+        printf("%d",arr[i]);
+    }
     return 0;
 }
