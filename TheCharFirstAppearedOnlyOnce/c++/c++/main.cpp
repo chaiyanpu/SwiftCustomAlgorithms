@@ -44,7 +44,7 @@ struct ListNode{
     int value;
     ListNode *next;
 };
-//反转链表并输出反转后的头节点(不死你头节点的值，是反转后的头节点)
+//反转链表并输出反转后的头节点(不是头节点的值，是反转后的头节点)
 ListNode* exchangeList(ListNode * head){
     ListNode * exchangeHead = NULL;
     ListNode * node = head;
