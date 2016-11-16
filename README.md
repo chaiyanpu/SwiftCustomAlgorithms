@@ -14,7 +14,7 @@ class ListNode<T>{
 ```
 #####Stack
 ```
-//A stack come true by List.Apple has used Array to constitute Satck, I used List
+//A Stack implementation by List.Apple has used Array to constitute Satck, so I used List.
 class Stack<T>{
     var stack:ListNode<T>?
     init(value:ListNode<T>? = nil) {
@@ -68,7 +68,7 @@ class Stack<T>{
 ```
 #####Queue
 ```
-// A queue come true by Array
+// A Queue come true by Array
 class Queue<T>{
     var array = [T]()
     var count:Int{
