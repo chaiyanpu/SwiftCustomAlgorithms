@@ -1,4 +1,4 @@
-##There is custom Swift algorithms implementation，continuing updata...
+##There is custom Swift algorithmic implementation，continuing updata...
 
 ###Base data structure
 #####List
@@ -105,5 +105,5 @@ class BinaryTreeNode<T>{
  }
 ```
 ###Other
-Other is many general algorithms implementation.
+Other is many general algorithmic implementation.
 
