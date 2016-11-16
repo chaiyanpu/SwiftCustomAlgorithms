@@ -107,4 +107,3 @@ class BinaryTreeNode<T>{
 ###Other
 Other is many general algorithms implementation.
 
-####If you like it,give me a star please.
