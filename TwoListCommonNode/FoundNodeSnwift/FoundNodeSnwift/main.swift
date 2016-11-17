@@ -15,7 +15,7 @@ enum MyError:Error {
     case inputError(String)
 }
 
-//创建是个节点的链表
+//创建10个节点的链表
 ///creat list,10 nodes
 func creatChainTable() -> ListNode<Int>{
     let listNode = ListNode(0)
@@ -56,7 +56,7 @@ func getNodeFromTheEnd(head:ListNode<Int>,position:UInt) throws -> ListNode<Int>
         return first
     }
     
-    for _ in 0 ..< position {
+    for _ in 1 ..< position {
         if first.next != nil {
             first = first.next!
         }else{ //out of the range
