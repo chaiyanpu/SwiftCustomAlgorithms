@@ -9,16 +9,14 @@
 import Foundation
 
 /// Swift链表节点表示形式   只能用class，因为Swift的struct里不能包含与自己相关的属性
-class ListNode<T>{  //节点的next默认为nil
+//节点的next默认为nil
+class ListNode<T>{
     var value:T
     var next:ListNode?
     init(_ value:T) {
         self.value = value
         self.next = nil
     }
-//    deinit {
-//        print("被释放了")
-//    }
 }
 
 class Stack<T>{
