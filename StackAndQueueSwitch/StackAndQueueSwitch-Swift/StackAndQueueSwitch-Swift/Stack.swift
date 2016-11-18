@@ -20,12 +20,12 @@ class ListNode<T>{
 }
 
 class Stack<T>{
-    var stack:ListNode<T>?
+    private var stack:ListNode<T>?
     init(value:ListNode<T>? = nil) {
         self.stack = value
     }
     
-    func push(value:T){
+    open func push(value:T){
         switch self.isEmpty() {
         case true:
             self.stack = ListNode(value)
@@ -36,7 +36,7 @@ class Stack<T>{
         }
     }
     
-    func top() -> T?{
+    open func top() -> T?{
         switch self.isEmpty() {
         case true:
             return nil
@@ -47,17 +47,21 @@ class Stack<T>{
     }
     
     @discardableResult
-    func pop() -> Stack{
+    open func pop() -> Stack{
         switch self.isEmpty() {
         case true:
             break
         default:
-            self.stack = self.stack!.next
+            if self.stack!.next != nil{
+                self.stack = self.stack!.next
+            }else{
+                self.stack = nil
+            }
         }
         return self
     }
     
-    func isEmpty() -> Bool{
+    open func isEmpty() -> Bool{
         if self.stack == nil {
             return true
         }else{
@@ -65,7 +69,7 @@ class Stack<T>{
         }
     }
     
-    func Clear(){
+    open func Clear(){
         self.stack = nil
     }
     

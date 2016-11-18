@@ -33,7 +33,7 @@ let inorder = [4,7,2,1,5,3,8,6]
 print("根据前序和中序创建二叉树")
 do {
     let root = try buildBinaryTree(preorder, inorder: inorder)
-    print("%d------",root?.left?.value);
+    print("%d------",root?.left?.value ?? 0);
     print("%d------",root?.left?.left?.value);
     print("%d------",root?.left?.left?.right?.value);
     

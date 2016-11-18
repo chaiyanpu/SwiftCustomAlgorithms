@@ -48,12 +48,17 @@ class Stack<T>{
         }
     }
     
-    func pop() -> Stack{
+    @discardableResult
+    open func pop() -> Stack{
         switch self.isEmpty() {
         case true:
             break
         default:
-            self.stack = self.stack!.next
+            if self.stack!.next != nil{
+                self.stack = self.stack!.next
+            }else{
+                self.stack = nil
+            }
         }
         return self
     }
