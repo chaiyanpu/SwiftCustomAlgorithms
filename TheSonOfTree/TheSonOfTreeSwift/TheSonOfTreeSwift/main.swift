@@ -14,7 +14,7 @@ import Foundation
 print("Hello, World!")
 
 ///construct of binary tree
-class BinaryTree<T:Equatable> {
+class BinaryTree<T> {
     var value:T
     var left:BinaryTree?
     var right:BinaryTree?
