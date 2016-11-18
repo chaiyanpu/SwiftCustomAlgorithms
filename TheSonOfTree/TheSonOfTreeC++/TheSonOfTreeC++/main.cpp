@@ -11,7 +11,6 @@
 #include <iostream>
 #include <stack>
 
-
 ///construct of binary tree
 struct BinaryTreeNode {
     int value;
@@ -46,19 +45,9 @@ bool getAnswerWith(BinaryTreeNode * first,BinaryTreeNode * second){
 
 bool isHasCommonValue(BinaryTreeNode * first,BinaryTreeNode *second){
     if (second == NULL){ return true;}
-    if (first == NULL) { return false;}
     if (second->value != first->value){ return false;}
     return (isHasCommonValue(first->left, second->left) && (isHasCommonValue(first->right, second->right)));
 }
-
-
-
-
-
-
-
-
-
 
 
 int main(int argc, const char * argv[]) {
