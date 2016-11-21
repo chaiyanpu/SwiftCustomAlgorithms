@@ -23,12 +23,12 @@ ListNode * mergeTwoList(ListNode *first,ListNode *second){
     
     ListNode * newHead = NULL;
     
-    if (first->value > second->value){
+    if (first->value < second->value){
         newHead = first;
         newHead->next = mergeTwoList(first->next, second);
     }else{
         newHead = second;
-        newHead->next = mergeTwoList(second->next, first);
+        newHead->next = mergeTwoList(first, second->next);
     }
     return newHead;
 }
