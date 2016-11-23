@@ -18,7 +18,11 @@ func preorderBinary(tree:BinaryTreeNode<Int>?) throws {   //栈的运用
     while !(stack.isEmpty()) || node != nil {
         if let _ = node {
             stack.push(value: node!)
-            print(node!.value)
+            if let v = node!.value{
+                print(v)
+            }else{
+                throw InputError.error("error")  //error
+            }
             node = node!.left
         }else{
             node = stack.top()?.right

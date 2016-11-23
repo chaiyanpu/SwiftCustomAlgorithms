@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E640A60E1DE5BB08004ADB64 /* GetDeepOfBinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E640A60D1DE5BB08004ADB64 /* GetDeepOfBinaryTree.swift */; };
 		E66DD4091DCED9BA004CF9B4 /* Browse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66DD4081DCED9BA004CF9B4 /* Browse.swift */; };
 		E66DD40B1DCEDB5B004CF9B4 /* BuildBinatryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66DD40A1DCEDB5B004CF9B4 /* BuildBinatryTree.swift */; };
 		E66DD40D1DCEE19A004CF9B4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66DD40C1DCEE19A004CF9B4 /* Stack.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E640A60D1DE5BB08004ADB64 /* GetDeepOfBinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDeepOfBinaryTree.swift; sourceTree = "<group>"; };
 		E66DD4081DCED9BA004CF9B4 /* Browse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Browse.swift; sourceTree = "<group>"; };
 		E66DD40A1DCEDB5B004CF9B4 /* BuildBinatryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildBinatryTree.swift; sourceTree = "<group>"; };
 		E66DD40C1DCEE19A004CF9B4 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				E6E534E41DCCA0710099B077 /* main.swift */,
+				E640A60D1DE5BB08004ADB64 /* GetDeepOfBinaryTree.swift */,
 				E66DD40A1DCEDB5B004CF9B4 /* BuildBinatryTree.swift */,
 				E66DD40C1DCEE19A004CF9B4 /* Stack.swift */,
 				E66DD4081DCED9BA004CF9B4 /* Browse.swift */,
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E640A60E1DE5BB08004ADB64 /* GetDeepOfBinaryTree.swift in Sources */,
 				E66DD40D1DCEE19A004CF9B4 /* Stack.swift in Sources */,
 				E66DD40B1DCEDB5B004CF9B4 /* BuildBinatryTree.swift in Sources */,
 				E6E534E51DCCA0710099B077 /* main.swift in Sources */,
