@@ -61,10 +61,14 @@ do {
 }catch{
     print(error)
 }
+
+//MARK: - 得到二叉树的深度
 print("the tree1 deep length is:%d",getDeep(tree1))
 print("the tree2 deep length is:%d",getDeep(tree2))
 
-
+//MARK: - 判断是否是平衡二叉树
+print("is balance binary tree: \(judgeBalanceTree(tree1!))")
+print("is balance binary tree: \(judgeBalanceTree(tree2))")
 
 
 

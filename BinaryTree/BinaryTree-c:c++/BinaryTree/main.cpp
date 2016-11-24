@@ -113,6 +113,34 @@ int getDeepWithABinaryTree(BinaryTreeNode * tree){
     return leftLen > rightLen ? leftLen + 1 : rightLen + 1;
 }
 
+/// Judging whether a binary tree is blance binary tree. 思路：后序遍历,使用递归
+bool isBalanced(BinaryTreeNode *head,int * deepLength);
+bool judgeBlanceBinaryTree(BinaryTreeNode * head){
+    
+    int deepLength = 0;
+    return isBalanced(head,&deepLength);
+
+}
+bool isBalanced(BinaryTreeNode *head,int * deepLength){
+    
+    if (head == NULL){
+        *deepLength = 0;
+        return  true;
+    }
+    
+    int left,right;
+    if (isBalanced(head->left, &left) && isBalanced(head->right, &right)){
+        int i = abs(left - right);
+        if (i <= 1){
+            *deepLength = 1 + (left > right ? left : right);//深度++
+            return true;
+        }else{
+            return false;
+        }
+    }
+    return false;
+}
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -133,6 +161,10 @@ int main(int argc, const char * argv[]) {
      printf("\n");printf("\n");
     //得到二叉树的深度
     printf("the deep of binary tree is %d\n",getDeepWithABinaryTree(binaryTreeNode));
+    
+    //判断二叉树是不是平衡二叉树
+    printf("printf 1 is a blance binary tree,0 not: %d\n",judgeBlanceBinaryTree(binaryTreeNode));
+    
     
     return 0;
 }
