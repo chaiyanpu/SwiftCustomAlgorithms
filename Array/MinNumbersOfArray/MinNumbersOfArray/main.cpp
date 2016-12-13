@@ -7,14 +7,6 @@
 //  get least numbers in a array.
 
 #include <iostream>
-#include <exception>
-
-///exception
-class MyError {
-    const char* const data;
-public:
-    MyError(const char* const msg = 0):data(msg){}
-};
 
 ///exchange data
 void swap(int* first,int *second){
@@ -51,7 +43,7 @@ int partition(int data[],int length,int start,int end){
 */
 void getLeastNumbersInaArray(int *array,int length,int *output,int k){
     if (array == NULL || output == NULL || k > length || length <= 0 || k <= 0){
-        throw MyError("error");
+        printf("input error");
     }
     int start = 0;
     int end = length - 1;
@@ -74,6 +66,7 @@ void getLeastNumbersInaArray(int *array,int length,int *output,int k){
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
+    
     int array[10] = {1,4,7,8,89,2,44,4,334,68};
     int k = 5;
     int output[k];
@@ -81,6 +74,11 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < k ; i ++) {
         printf("%d ",output[i]);
     }
+    printf("\n");
+    
+    int array2[] = {1,2,3,4};
+    getLeastNumbersInaArray(array2, 4, output, 5);
+    
     printf("\n");
     return 0;
 }
