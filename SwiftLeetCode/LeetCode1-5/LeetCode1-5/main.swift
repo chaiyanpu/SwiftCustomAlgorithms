@@ -37,4 +37,52 @@ class TwoSum {
 }
 
 
+/* 2.Add Two Numbers
+    Q:
+    You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+ 
+    You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+    A:
+    两个指针同时往下走，将链表节点的值相加，添加入新的链表，判断是否需要进位，直到节点遍历完毕且不需要进位为止。
+ */
+//list
+ public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init(_ val: Int) {
+            self.val = val
+            self.next = nil
+    }
+}
+class AddTwoNumbers {
+    func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        var l1 = l1
+        var l2 = l2
+        let head:ListNode = ListNode(0)
+        var end:ListNode = head
+        var changeNum:Int = 0
+        while true {
+            if l1 != nil{
+                changeNum += l1!.val
+                l1 = l1!.next
+            }
+            if l2 != nil{
+                changeNum += l2!.val
+                l2 = l2!.next
+            }
+            //赋值
+            end.val = changeNum % 10
+            changeNum /= 10
+            //判断
+            guard l1 != nil || l2 != nil || changeNum != 0 else{
+                break
+            }
+            //往下移位
+            end.next = ListNode(0)
+            end = end.next!
+        }
+        return head
+    }
+}
+
 
