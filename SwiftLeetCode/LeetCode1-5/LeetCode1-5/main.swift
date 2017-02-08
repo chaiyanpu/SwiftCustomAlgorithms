@@ -126,14 +126,54 @@ class LengthOfLongestSubstring {
  
  Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
  A:
-
+ 二分法，比较好
  */
 class MedianOfTwoSortedArrays{
     func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
-        
-        return 0.1
+        let m = nums1.count
+        let n = nums2.count
+        let k = (m + n)/2
+        if 0 == ((m + n) & 1) { //偶数
+            return (findKth(nums1,nums2,0,0,m,n,k)+findKth(nums1,nums2,0,0,m,n,k+1))/2
+        }else{
+            return findKth(nums1,nums2,0,0,m,n,k+1)
+        }
+    }
+    
+    func findKth(_ nums1:[Int],_ nums2:[Int],_ start1:Int,_ start2:Int,_ length1:Int,_ lenght2:Int,_ k:Int) -> Double{
+        if length1 > lenght2{
+            return findKth(nums2, nums1, start2, start1, lenght2, length1, k)
+        }
+        if 0 == length1{
+            return Double(nums2[start2 + k - 1])
+        }
+        if 1 == k{
+            return Double(min(nums2[start2], nums1[start1]))
+        }
+        let p1 = Int(min(k/2, length1))
+        let p2 = k - p1
+        if nums1[start1 + p1 - 1] < nums2[start2 + p2 - 1] {
+            return findKth(nums1, nums2, start1 + p1, start2, length1 - p1, lenght2, k - p1)
+        }else if nums1[start1 + p1 - 1] > nums2[start2 + p2 - 1]{
+            return findKth(nums1, nums2, start1, start2 + p2, length1, lenght2 - p2, k - p2)
+        }else{
+            return Double(nums1[start1 + p1 - 1])
+        }
     }
 }
+
+/* 5.Longest Palindromic Substring
+ Q:
+ Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+ A:
+ 
+ */
+class LongestPalindromicSubstring{
+    func longestPalindrome(_ s: String) -> String {
+        return ""
+    }
+}
+
 
 
 
