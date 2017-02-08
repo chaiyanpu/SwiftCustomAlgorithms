@@ -47,7 +47,7 @@ class TwoSum {
     time:O(n)
     两个指针同时往下走，将链表节点的值相加，添加入新的链表，判断是否需要进位，直到节点遍历完毕且不需要进位为止。
  */
-//list
+//ListNode
  public class ListNode {
     public var val: Int
     public var next: ListNode?
@@ -166,10 +166,11 @@ class MedianOfTwoSortedArrays{
  Q:
  Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
  A:
- 
+    有个马拉车算法，看起来很晦涩，以后再看。
  */
 class LongestPalindromicSubstring{
     func longestPalindrome(_ s: String) -> String {
+        
         return ""
     }
 }
