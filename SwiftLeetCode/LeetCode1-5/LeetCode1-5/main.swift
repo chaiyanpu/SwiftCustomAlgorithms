@@ -166,7 +166,7 @@ class MedianOfTwoSortedArrays{
  Q:
  Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
  A:
-    有个马拉车算法，看起来很晦涩，以后再看。
+    有个马拉车（Manacher's Algorithm）算法，看起来很晦涩，以后再看。
  */
 class LongestPalindromicSubstring{
     func longestPalindrome(_ s: String) -> String {
